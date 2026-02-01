@@ -1,5 +1,5 @@
 pipeline {
-    agent any {
+    agent robomart
         stages {
             stage ('Building') {
                 steps {
@@ -20,5 +20,4 @@ pipeline {
             }
         }
         
-    }
 }
