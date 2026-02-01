@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        node {
+            label 'robomart'
+        }
+    }
         stages {
             stage ('Building') {
                 steps {
