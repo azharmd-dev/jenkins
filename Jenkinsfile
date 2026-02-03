@@ -12,6 +12,12 @@ pipeline {
         timeout(time: 5, unit: 'SECONDS')
         disableConcurrentBuilds()
     }
+    parameters {
+        string(name: 'BRANCH_NAME', defaultValue: 'main', description: 'Git branch')
+        choice(name: 'ENV', choices: ['dev', 'qa', 'prod'], description: 'Environment')
+        booleanParam(name: 'RUN_TESTS', defaultValue: true, description: 'Run tests?')
+        password(name: 'DB_PASSWORD', defaultValue: '', description: 'Database password')
+    }
     stages {
         stage ('Building') {
             steps {
