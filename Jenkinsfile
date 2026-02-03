@@ -26,6 +26,13 @@ pipeline {
         post {
             always {
                 echo "Post Message after stages"
+                cleanWS()
+            }
+            success {
+                echo "Build is success"
+            }
+            failure {
+                echo "Build is failure"
             }
         }
         
