@@ -25,6 +25,8 @@ pipeline {
                     sh  """
                     echo "Building is Success"
                     echo $Name
+                    echo "Branch = ${params.BRANCH_NAME}"
+                    echo "Enviroment =  ${params.ENV}"
                 """
                 }
             }
