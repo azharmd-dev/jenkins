@@ -8,6 +8,9 @@ pipeline {
         Name = "Azhar"
         Country = "India"
     }
+    options{
+        timeout(time: 5, unit: 'SECONDS')
+    }
     stages {
         stage ('Building') {
             steps {
@@ -25,6 +28,7 @@ pipeline {
                 script {
                     sh  """
                     echo "Testing is Success"
+                    sleep 10
                 """
                 }
             }
