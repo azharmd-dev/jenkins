@@ -7,19 +7,25 @@ pipeline {
         stages {
             stage ('Building') {
                 steps {
-                    echo "Building Success"
+                    script """
+                        echo "Building is Success"
+                    """
                 }
             }
 
             stage ('Testing') {
                 steps {
-                    echo "Testing Success"
+                    script """
+                        echo "Testing is Success"
+                    """
                 }
             }
 
             stage ('Deploying') {
                 steps {
-                    echo "Deploying Success"
+                    script """
+                        echo "Deploying is Success"
+                    """
                 }
             }
         }
