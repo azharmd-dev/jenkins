@@ -23,5 +23,10 @@ pipeline {
                 }
             }
         }
+        post {
+            always {
+                echo "Post Message after stages"
+            }
+        }
         
 }
