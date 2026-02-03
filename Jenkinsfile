@@ -4,42 +4,54 @@ pipeline {
             label 'robomart'
         }
     }
-        stages {
-            stage ('Building') {
-                steps {
-                    script """
-                        echo "Building is Success"
-                    """
-                }
-            }
-
-            stage ('Testing') {
-                steps {
-                    script """
-                        echo "Testing is Success"
-                    """
-                }
-            }
-
-            stage ('Deploying') {
-                steps {
-                    script """
-                        echo "Deploying is Success"
-                    """
+    environment {
+        Name = "Azhar"
+        Country = "India"
+    }
+    stages {
+        stage ('Building') {
+            steps {
+                script {
+                    sh  """
+                    echo "Building is Success"
+                    echo $Name
+                """
                 }
             }
         }
-        post {
-            always {
-                echo "Post Message after stages"
-                cleanWs()
-            }
-            success {
-                echo "Build is success"
-            }
-            failure {
-                echo "Build is failure"
+
+        stage ('Testing') {
+            steps {
+                script {
+                    sh  """
+                    echo "Testing is Success"
+                """
+                }
             }
         }
-        
+
+        stage ('Deploying') {
+            steps {
+                script {
+                    sh  """
+                    echo "Deploying is Success"
+                    echo $Country
+                """
+                }
+            }
+        }
+    }
+    post {
+        always {
+            echo "Post Message after stages"
+            cleanWs()
+        }
+        success {
+            echo "Build is success"
+        }
+        failure {
+            echo "Build is failure"
+        }
+    }
+    
 }
