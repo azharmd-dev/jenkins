@@ -9,7 +9,7 @@ pipeline {
         Country = "India"
     }
     options{
-        timeout(time: 5, unit: 'SECONDS')
+        timeout(time: 21, unit: 'SECONDS')
         disableConcurrentBuilds()
     }
     parameters {
