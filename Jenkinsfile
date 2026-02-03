@@ -26,7 +26,7 @@ pipeline {
         post {
             always {
                 echo "Post Message after stages"
-                cleanWS()
+                cleanWs()
             }
             success {
                 echo "Build is success"
