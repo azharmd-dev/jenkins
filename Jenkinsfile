@@ -37,7 +37,7 @@ pipeline {
                 script {
                     sh  """
                     echo "Testing is Success"
-                    sleep 10
+                    sleep 5
                 """
                 }
             }
