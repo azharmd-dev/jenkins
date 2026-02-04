@@ -44,12 +44,17 @@ pipeline {
         }
 
         stage ('Deploying') {
-            input {
-                message "Should we continue?"
-                ok "Yes, we should."
-                submitter "alice,bob"
-                parameters {
-                    string(name: 'PERSON', defaultValue: 'Mr Azhar', description: 'Who should I say hello to?')
+            // input {
+            //     message "Should we continue?"
+            //     ok "Yes, we should."
+            //     submitter "alice,bob"
+            //     parameters {
+            //         string(name: 'PERSON', defaultValue: 'Mr Azhar', description: 'Who should I say hello to?')
+            //     }
+            // }
+            when {
+                expression {
+                    params.ENV == 'dev'
                 }
             }
             steps {
